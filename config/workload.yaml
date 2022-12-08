@@ -13,7 +13,9 @@ spec:
         branch: main
   build:
     env:
-   # - name: BP_NATIVE_IMAGE
-   #   value: "true"
+    - name: BP_NATIVE_IMAGE
+      value: "true"
     - name: BP_FUNCTION
       value: functions.Handler
+    - name: BP_MAVEN_BUILD_ARGUMENTS
+      value: "-Dmaven.test.skip=true"
