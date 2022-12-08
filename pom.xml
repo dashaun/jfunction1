@@ -12,6 +12,8 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<spring-native.version>0.12.0</spring-native.version>
+		<repackage.classifier>exec</repackage.classifier>
+				<native-buildtools.version>0.9.11</native-buildtools.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -52,6 +54,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+						<artifactId>native-maven-plugin</artifactId>
+						<version>${native-buildtools.version}</version>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>test-native</id>
+								<phase>test</phase>
+								<goals>
+									<goal>test</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>build-native</id>
+								<phase>package</phase>
+								<goals>
+									<goal>build</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 		</plugins>
 	</build>
 
