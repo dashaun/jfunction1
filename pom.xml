@@ -45,7 +45,7 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+			<!--plugin>
 				<groupId>org.springframework.experimental</groupId>
 				<artifactId>spring-aot-maven-plugin</artifactId>
 				<version>${spring-native.version}</version>
@@ -63,7 +63,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 			
 			
 			<plugin>
