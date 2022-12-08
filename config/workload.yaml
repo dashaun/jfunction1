@@ -13,5 +13,7 @@ spec:
         branch: main
   build:
     env:
+      - name: BP_NATIVE_IMAGE
+        value: "true"
       - name: BP_FUNCTION
         value: functions.Handler
